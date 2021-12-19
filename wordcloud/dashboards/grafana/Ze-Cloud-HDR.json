@@ -1,0 +1,154 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_ZE-CSV-HDR",
+      "label": "Ze-CSV-HDR",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "marcusolsson-csv-datasource",
+      "pluginName": "CSV"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "8.2.5"
+    },
+    {
+      "type": "datasource",
+      "id": "marcusolsson-csv-datasource",
+      "name": "CSV",
+      "version": "0.6.1"
+    },
+    {
+      "type": "panel",
+      "id": "marcusolsson-dynamictext-panel",
+      "name": "Dynamic text",
+      "version": "1.8.0"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1639796064543,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": "${DS_ZE-CSV-HDR}",
+      "gridPos": {
+        "h": 6,
+        "w": 23,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "content": "<img src=\"https://www.zebrium.com/hs-fs/hubfs/logosquare.png?width=108&height=108\" width=\"54px\" height=\"auto\" align=\"top\"></img>\n{{{\"Field 1\"}}}",
+        "defaultContent": "The query didn't return any results."
+      },
+      "pluginVersion": "8.2.5",
+      "repeat": null,
+      "targets": [
+        {
+          "decimalSeparator": ".",
+          "delimiter": ",",
+          "header": false,
+          "headers": [],
+          "ignoreUnknown": false,
+          "path": "/svc_grp/All/query/words",
+          "refId": "A",
+          "schema": [
+            {
+              "name": "Field 1",
+              "type": "string"
+            }
+          ],
+          "skipRows": 0
+        }
+      ],
+      "title": "Ze-Cloud-HDR",
+      "type": "marcusolsson-dynamictext-panel"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 32,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {},
+        "datasource": "${DS_ZE-CSV-HDR}",
+        "definition": "Field 1",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "ServiceGroup",
+        "multi": true,
+        "name": "svc_grp",
+        "options": [],
+        "query": {
+          "decimalSeparator": ".",
+          "delimiter": ",",
+          "header": false,
+          "headers": [],
+          "ignoreUnknown": true,
+          "params": [
+            [
+              "",
+              ""
+            ]
+          ],
+          "path": "/svc_grp/All/query/service_groups",
+          "schema": [
+            {
+              "name": "Field 1",
+              "type": "string"
+            }
+          ],
+          "skipRows": 0
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Ze-Cloud-HDR",
+  "uid": "guthABt7j",
+  "version": 17
+}
