@@ -79,7 +79,7 @@
           "header": false,
           "headers": [],
           "ignoreUnknown": false,
-          "path": "/svc_grp/All/query/words",
+          "path": "/svc_grp/${svc_grp:csv}/query/words",
           "refId": "A",
           "schema": [
             {
